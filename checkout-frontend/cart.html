@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>E-commerce - Carrinho</title>
+    <link
+      crossorigin="anonymous"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container">
+      <div class="py-5 text-center">
+        <!-- <img
+          alt=""
+          class="d-block mx-auto mb-4"
+          height="72"
+          src="../../assets/brand/bootstrap-solid.svg"
+          width="72"
+        /> -->
+        <h2>Formulário de pagamento</h2>
+        <!-- <p class="lead">
+          Below is an example form built entirely with Bootstrap's form
+          controls. Each required form group has a validation state that can be
+          triggered by attempting to submit the form without completing it.
+        </p> -->
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Seu carrinho</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+
+          <ul class="list-group mb-3">
+            <li
+              class="list-group-item d-flex justify-content-between lh-condensed"
+            >
+              <div>
+                <h6 class="my-0">Produto 1</h6>
+                <small class="text-muted"
+                  >Descrição resumida do produto 1</small
+                >
+              </div>
+              <span class="text-muted">$12</span>
+            </li>
+
+            <li
+              class="list-group-item d-flex justify-content-between lh-condensed"
+            >
+              <div>
+                <h6 class="my-0">Produto 2</h6>
+                <small class="text-muted"
+                  >Descrição resumida do produto 2</small
+                >
+              </div>
+              <span class="text-muted">$8</span>
+            </li>
+
+            <li
+              class="list-group-item d-flex justify-content-between lh-condensed"
+            >
+              <div>
+                <h6 class="my-0">Produto 3</h6>
+                <small class="text-muted"
+                  >Descrição resumida do produto 3</small
+                >
+              </div>
+              <span class="text-muted">$5</span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0">Código da Promoção</h6>
+                <small>PROMOTICKET</small>
+              </div>
+              <span class="text-success">-$5</span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (reais)</span>
+              <strong>$20</strong>
+            </li>
+          </ul>
+
+          <form class="card p-2">
+            <div class="input-group">
+              <input
+                class="form-control"
+                placeholder="Código da Promoção"
+                type="text"
+              />
+              <div class="input-group-append">
+                <button class="btn btn-secondary" type="submit">
+                  Resgatar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Dados de pagamento</h4>
+          <form class="needs-validation" novalidate="">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Primeiro nome</label>
+                <input
+                  class="form-control"
+                  id="firstName"
+                  placeholder=""
+                  required=""
+                  type="text"
+                  value=""
+                />
+                <div class="invalid-feedback">Primeiro nome é obrigatório.</div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Restante do nome</label>
+                <input
+                  class="form-control"
+                  id="lastName"
+                  placeholder=""
+                  required=""
+                  type="text"
+                  value=""
+                />
+                <div class="invalid-feedback">
+                  Restante do nome é obrigatório.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="username">Nome de usuário</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
+                </div>
+                <input
+                  class="form-control"
+                  id="username"
+                  placeholder="Nome de usuário"
+                  required=""
+                  type="text"
+                />
+                <div class="invalid-feedback" style="width: 100%">
+                  Nome de usuário é obrigatório.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email"
+                >E-mail <span class="text-muted">(Opcional)</span></label
+              >
+              <input
+                class="form-control"
+                id="email"
+                placeholder="voce@exemplo.com"
+                type="email"
+              />
+              <div class="invalid-feedback">
+                Por favor entre com um e-mail válido.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Endereço</label>
+              <input
+                class="form-control"
+                id="address"
+                placeholder="Av. Beira Mar, 1234"
+                required=""
+                type="text"
+              />
+              <div class="invalid-feedback">
+                Por favor entre com seu endereço.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address2"
+                >Complemento <span class="text-muted">(Opcional)</span></label
+              >
+              <input
+                class="form-control"
+                id="address2"
+                placeholder="Bloco A Apartamento 101"
+                type="text"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="country">País</label>
+                <select
+                  class="custom-select d-block w-100"
+                  id="country"
+                  required=""
+                >
+                  <option value="">Escolha...</option>
+                  <option>Brasil</option>
+                </select>
+                <div class="invalid-feedback">
+                  Por favor selecione um país válido.
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label for="state">Estado</label>
+                <select
+                  class="custom-select d-block w-100"
+                  id="state"
+                  required=""
+                >
+                  <option value="">Escolha...</option>
+                  <option>São Paulo</option>
+                </select>
+                <div class="invalid-feedback">
+                  Por favor selecione um estado válido.
+                </div>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <label for="zip">CEP</label>
+                <input
+                  class="form-control"
+                  id="zip"
+                  placeholder="01234-567"
+                  required=""
+                  type="text"
+                />
+                <div class="invalid-feedback">CEP é obrigatório.</div>
+              </div>
+            </div>
+
+            <hr class="mb-4" />
+            <div class="custom-control custom-checkbox">
+              <input
+                class="custom-control-input"
+                id="same-address"
+                type="checkbox"
+              />
+              <label class="custom-control-label" for="same-address"
+                >O endereço de entrega é igual ao meu endereço de
+                cobrança</label
+              >
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input
+                class="custom-control-input"
+                id="save-info"
+                type="checkbox"
+              />
+              <label class="custom-control-label" for="save-info"
+                >Salve essas informações para a próxima vez</label
+              >
+            </div>
+            <hr class="mb-4" />
+
+            <h4 class="mb-3">Tipo de pagamento</h4>
+
+            <div class="d-block my-3">
+              <div class="custom-control custom-radio">
+                <input
+                  checked=""
+                  class="custom-control-input"
+                  id="credit"
+                  name="paymentMethod"
+                  required=""
+                  type="radio"
+                />
+                <label class="custom-control-label" for="credit"
+                  >Cartão de Crédito</label
+                >
+              </div>
+
+              <div class="custom-control custom-radio">
+                <input
+                  class="custom-control-input"
+                  id="debit"
+                  name="paymentMethod"
+                  required=""
+                  type="radio"
+                />
+                <label class="custom-control-label" for="debit"
+                  >Cartão de Débito</label
+                >
+              </div>
+
+              <div class="custom-control custom-radio">
+                <input
+                  class="custom-control-input"
+                  id="paypal"
+                  name="paymentMethod"
+                  required=""
+                  type="radio"
+                />
+                <label class="custom-control-label" for="paypal"
+                  >Pag Seguro</label
+                >
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="cc-name">Nome no cartão</label>
+                <input
+                  class="form-control"
+                  id="cc-name"
+                  placeholder=""
+                  required=""
+                  type="text"
+                />
+                <small class="text-muted"
+                  >Nome completo mostrado no cartão</small
+                >
+                <div class="invalid-feedback">Nome no cartão é obrigatório</div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="cc-number">Número do cartão</label>
+                <input
+                  class="form-control"
+                  id="cc-number"
+                  placeholder=""
+                  required=""
+                  type="text"
+                />
+                <div class="invalid-feedback">
+                  Número do cartão é obrigatório
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration">Validade</label>
+                <input
+                  class="form-control"
+                  id="cc-expiration"
+                  placeholder=""
+                  required=""
+                  type="text"
+                />
+                <div class="invalid-feedback">
+                  Data de validade é obrigatória.
+                </div>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <label for="cc-cvv">CVV</label>
+                <input
+                  class="form-control"
+                  id="cc-cvv"
+                  placeholder=""
+                  required=""
+                  type="text"
+                />
+                <div class="invalid-feedback">
+                  Código de segurança é obrigatório.
+                </div>
+              </div>
+            </div>
+
+            <hr class="mb-4" />
+            <button class="btn btn-primary btn-lg btn-block" type="submit">
+              Continuar
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© 2017-2024 Nome da empresa</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacidade</a></li>
+          <li class="list-inline-item"><a href="#">Termos</a></li>
+          <li class="list-inline-item"><a href="#">Suporte</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script
+      crossorigin="anonymous"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    ></script>
+    <script
+      crossorigin="anonymous"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    ></script>
+    <script
+      crossorigin="anonymous"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    ></script>
+    <script
+      crossorigin="anonymous"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    ></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict';
+
+        window.addEventListener(
+          'load',
+          function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(
+              forms,
+              function (form) {
+                form.addEventListener(
+                  'submit',
+                  function (event) {
+                    if (form.checkValidity() === false) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  },
+                  false
+                );
+              }
+            );
+          },
+          false
+        );
+      })();
+    </script>
+
+    <div class="chrome_websiteIP_right" id="chrome_websiteIP">
+      104.22.58.100
+    </div>
+  </body>
+</html>
