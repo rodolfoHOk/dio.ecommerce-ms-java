@@ -1,0 +1,11 @@
+{
+    "type": "record",
+    "name": "CheckoutCreatedEvent",
+    "namespace": "me.dio.hiokdev.e_commerce_checkout_api.checkout.event",
+    "fields": [
+        {
+            "name": "checkoutCode",
+            "type": ["string", "null"]
+        }
+    ]
+}
