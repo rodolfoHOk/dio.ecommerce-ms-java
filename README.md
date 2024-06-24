@@ -17,4 +17,4 @@ Neste projeto prático iremos desenvolver uma solução de e-commerce com a arqu
 
 ## Guia
 
-[Spring initializr: e-commerce-checkout](https://start.spring.io/#!type=gradle-project&language=java&platformVersion=3.3.1&packaging=jar&jvmVersion=21&groupId=me.dio.hiokdev&artifactId=e-commerce-checkout-api&name=e-commerce-checkout-api&description=E-commerce%20Checkout%20API%20Microservice&packageName=me.dio.hiokdev.e-commerce-checkout-api&dependencies=web,cloud-stream,distributed-tracing,kafka-streams,postgresql,lombok)
+[Spring initializr: e-commerce-checkout](https://start.spring.io/#!type=gradle-project&language=java&platformVersion=3.3.1&packaging=jar&jvmVersion=21&groupId=me.dio.hiokdev&artifactId=e-commerce-checkout-api&name=e-commerce-checkout-api&description=E-commerce%20Checkout%20API%20Microservice&packageName=me.dio.hiokdev.e-commerce-checkout-api&dependencies=web,cloud-stream,distributed-tracing,kafka-streams,lombok)
