@@ -1,7 +1,6 @@
 package me.dio.hiokdev.e_commerce_checkout_api.resource.checkout;
 
 import lombok.RequiredArgsConstructor;
-import me.dio.hiokdev.e_commerce_checkout_api.entity.CheckoutEntity;
 import me.dio.hiokdev.e_commerce_checkout_api.service.CheckoutService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
