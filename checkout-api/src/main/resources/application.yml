@@ -19,14 +19,33 @@ spring:
         jdbc:
           lob:
             non_contextual_creation: true
-  kafka:
-    producer:
-      properties:
-        schema.registry.url: http://localhost:8081
-        allow.auto.create.topics: true
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+  cloud:
+    stream:
+      function:
+        definition: checkoutCreatedEventSupplier
+      bindings:
+        checkoutCreatedEventSupplier-out-0:
+          destination: streaming.ecommerce.checkout.created
+          contentType: application/*+avro
+          producer:
+            use-native-encoding: true
+      binder:
+        auto-create-topics: true
+        brokers: localhost:9092
+      kafka:
+        bindings:
+          checkoutCreatedEventSupplier-out-0:
+            producer:
+              configuration:
+                schema.registry.url: http://localhost:8081
+                value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+        streams:
+          binder:
+            configuration:
+              schema.registry.url: http://localhost:8081
+              specific.avro.reader: true
+
+#  kafka:
 #    consumer:
 #      properties:
 #        schema.registry.url: http://localhost:8081
@@ -35,7 +54,6 @@ spring:
 #      bootstrap-servers: localhost:9092
 #      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 #      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
-app:
-  topic:
-    checkout-created: streaming.ecommerce.checkout.created
+#app:
+#  topic:
 #    payment-paid: streaming.ecommerce.payment.paid
