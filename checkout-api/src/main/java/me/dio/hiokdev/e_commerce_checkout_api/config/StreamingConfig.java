@@ -3,6 +3,7 @@ package me.dio.hiokdev.e_commerce_checkout_api.config;
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde;
 import lombok.extern.slf4j.Slf4j;
 import me.dio.hiokdev.e_commerce_checkout_api.checkout.event.CheckoutCreatedEvent;
+import me.dio.hiokdev.e_commerce_checkout_api.service.CheckoutService;
 import me.dio.hiokdev.e_commerce_payment_api.payment.event.PaymentPaidEvent;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.streams.kstream.KStream;
@@ -36,9 +37,13 @@ public class StreamingConfig {
     }
 
     @Bean
-    public Consumer<KStream<PaymentPaidEvent, PaymentPaidEvent>> paymentPaidEventConsumer() {
+    public Consumer<KStream<PaymentPaidEvent, PaymentPaidEvent>> paymentPaidEventConsumer(
+            CheckoutService checkoutService
+    ) {
         return stream -> stream.peek((key, value) -> {
             log.info(String.format("#### -> Consuming message: paymentCode: -> %s", value.getPaymentCode()));
+            final var checkoutEntity = checkoutService.approve(value.getCheckoutCode().toString()).orElseThrow();
+            log.info(String.format("#### -> Checkout code: %s has %s",checkoutEntity.getCode(), checkoutEntity.getStatus().name()));
         });
     }
 
