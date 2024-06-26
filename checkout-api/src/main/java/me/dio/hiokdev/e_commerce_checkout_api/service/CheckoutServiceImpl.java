@@ -7,6 +7,7 @@ import me.dio.hiokdev.e_commerce_checkout_api.repository.CheckoutRepository;
 import me.dio.hiokdev.e_commerce_checkout_api.resource.checkout.CheckoutRequest;
 import me.dio.hiokdev.e_commerce_checkout_api.streaming.CheckoutCreatedProducer;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -33,6 +34,15 @@ public class CheckoutServiceImpl implements CheckoutService {
         checkoutCreatedProducer.send(checkoutCreatedEvent);
 
         return Optional.of(savedEntity);
+    }
+
+    @Override
+    @Transactional
+    public Optional<CheckoutEntity> approve(String checkoutCode) {
+        var checkoutEntity = checkoutRepository.findByCode(checkoutCode).orElseThrow();
+        checkoutEntity.setStatus(CheckoutEntity.Status.APPROVED);
+        var updatedCheckout = checkoutRepository.save(checkoutEntity);
+        return Optional.of(updatedCheckout);
     }
 
 }

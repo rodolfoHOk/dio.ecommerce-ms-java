@@ -9,4 +9,6 @@ public interface CheckoutService {
 
     Optional<CheckoutEntity> create(CheckoutRequest checkoutRequest);
 
+    Optional<CheckoutEntity> approve(String checkoutCode);
+
 }
