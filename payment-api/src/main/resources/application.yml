@@ -22,23 +22,25 @@ spring:
           jdbc:
             lob:
               non_contextual_creation: true
-  kafka:
-    producer:
-      properties:
-        schema.registry.url: http://localhost:8081
-        allow.auto.create.topics: true
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
-    consumer:
-      properties:
-        schema.registry.url: http://localhost:8081
-        specific.avro.reader: true
-        allow.auto.create.topics: true
-      bootstrap-servers: localhost:9092
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
-app:
-  topic:
-    checkout-created: streaming.ecommerce.checkout.created
-    payment-paid: streaming.ecommerce.payment.paid
+  cloud:
+    stream:
+      function:
+        definition: checkoutCreatedEventConsumer
+      bindings:
+        checkoutCreatedEventConsumer-in-0:
+          destination: streaming.ecommerce.checkout.created
+          contentType: application/*+avro
+          consumer:
+            use-native-encoding: true
+      binder:
+        auto-create-topics: true
+        brokers: localhost:9092
+      kafka:
+        streams:
+          binder:
+            configuration:
+              schema.registry.url: http://localhost:8081
+              specific.avro.reader: true
+#app:
+#  topic:
+#    payment-paid: streaming.ecommerce.payment.paid

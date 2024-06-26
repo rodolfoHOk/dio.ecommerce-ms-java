@@ -39,11 +39,11 @@ spring:
               configuration:
                 schema.registry.url: http://localhost:8081
                 value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
-        streams:
-          binder:
-            configuration:
-              schema.registry.url: http://localhost:8081
-              specific.avro.reader: true
+#        streams:
+#          binder:
+#            configuration:
+#              schema.registry.url: http://localhost:8081
+#              specific.avro.reader: true
 
 #  kafka:
 #    consumer:
@@ -51,8 +51,6 @@ spring:
 #        schema.registry.url: http://localhost:8081
 #        specific.avro.reader: true
 #        allow.auto.create.topics: true
-#      bootstrap-servers: localhost:9092
-#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 #      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
 #app:
 #  topic:
