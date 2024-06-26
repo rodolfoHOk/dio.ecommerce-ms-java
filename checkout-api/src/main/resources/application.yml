@@ -9,7 +9,6 @@ spring:
     hikari:
       connection-test-query: select 1
   jpa:
-    open-in-view: true
     hibernate:
       ddl-auto: create-drop
     properties:
