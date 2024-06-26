@@ -2,7 +2,7 @@
 
 Neste projeto prático iremos desenvolver uma solução de e-commerce com a arquitetura de microsserviços e aplicar a integração entre eles orientada a eventos com Apache Kafka e garantir a compatibilidade entre da comunicação dos microsserviços com Schema Registry. Para isso, programaremos em Java utilizando a stack do Spring (Spring Boot, Spring Cloud Streams).
 
-## Tecnologias
+## Tecnologias backend
 
 - Java 21
 - Spring Framework / Spring Boot
@@ -17,6 +17,12 @@ Neste projeto prático iremos desenvolver uma solução de e-commerce com a arqu
 - Spring Boot 3.3
 - Spring Cloud Stream 4.1
 - ConfluentInc Kafka and Schema Registry 7.6.1
+
+## Tecnologias frontend
+
+- HTML
+- Bootstrap
+- Javascript
 
 ## Introdução ao projeto e suas tecnologias
 
