@@ -25,22 +25,30 @@ spring:
   cloud:
     stream:
       function:
-        definition: checkoutCreatedEventConsumer
+        definition: checkoutCreatedEventConsumer;paymentPaidEventSupplier
       bindings:
         checkoutCreatedEventConsumer-in-0:
           destination: streaming.ecommerce.checkout.created
           contentType: application/*+avro
           consumer:
             use-native-encoding: true
+        paymentPaidEventSupplier-out-0:
+          destination: streaming.ecommerce.payment.paid
+          contentType: application/*+avro
+          producer:
+            use-native-encoding: true
       binder:
         auto-create-topics: true
         brokers: localhost:9092
       kafka:
+        bindings:
+          paymentPaidEventSupplier-out-0:
+            producer:
+              configuration:
+                schema.registry.url: http://localhost:8081
+                value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
         streams:
           binder:
             configuration:
               schema.registry.url: http://localhost:8081
               specific.avro.reader: true
-#app:
-#  topic:
-#    payment-paid: streaming.ecommerce.payment.paid
