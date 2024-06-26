@@ -1,0 +1,15 @@
+{
+    "type": "record",
+    "name": "PaymentPaidEvent",
+    "namespace": "me.dio.hiokdev.e_commerce_payment_api.payment.event",
+    "fields": [
+        {
+            "name": "checkoutCode",
+            "type": ["string"]
+        },
+        {
+            "name": "paymentCode",
+            "type": ["string"]
+        }
+    ]
+}
