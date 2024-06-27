@@ -12,6 +12,12 @@ Neste projeto prático iremos desenvolver uma solução de e-commerce com a arqu
 - Schema Registry
 - PostgreSQL
 
+### Testes
+
+- Junit 5
+- Cucumber
+- TestContainers
+
 ## Atualizações de versões:
 
 - Spring Boot 3.3
@@ -26,11 +32,11 @@ Neste projeto prático iremos desenvolver uma solução de e-commerce com a arqu
 
 ## Introdução ao projeto e suas tecnologias
 
-[intro.md](/intro.md)
+[Slides de introdução](/intro.md)
 
 ## Garantindo a qualidade
 
-[qa.md](/qa.md)
+[Slides sobre QA](/qa.md)
 
 [Cucumber Website](https://cucumber.io/)
 
