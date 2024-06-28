@@ -6,7 +6,7 @@ Neste projeto prático iremos desenvolver uma solução de e-commerce com a arqu
 
 - Java 21
 - Spring Framework / Spring Boot
-- Spring Cloud Stream with Distributed Tracing
+- Spring Cloud Stream
 - Apache Kafka
 - Apache Avro
 - Schema Registry

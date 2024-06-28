@@ -7,25 +7,33 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.spring.CucumberContextConfiguration;
 import me.dio.hiokdev.e_commerce_checkout_api.resource.checkout.CheckoutRequest;
+import me.dio.hiokdev.e_commerce_checkout_api.util.UUIDUtil;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.HttpStatusCodeException;
 
+import java.util.UUID;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 @CucumberContextConfiguration
 public class CheckoutDefinitions extends CucumberSpringIntegrationTest {
+
+    @MockBean
+    private UUIDUtil uuidUtil;
 
     private String responseBody;
     private HttpHeaders responseHeaders;
     private HttpStatusCode statusCode;
 
-    @Given("checkout code {string}")
-    public void checkoutCode(String code) {
-
+    @Given("generate uuid {string}")
+    public void generateUuid(String uuid) {
+        when(uuidUtil.createUUID()).thenReturn(UUID.fromString(uuid));
     }
 
     @When("the client calls {string}")
@@ -68,7 +76,7 @@ public class CheckoutDefinitions extends CucumberSpringIntegrationTest {
 
     @And("response is {string}")
     public void responseIs(String expectedResponse) {
-
+        assertThat(responseBody).isEqualTo(expectedResponse);
     }
 
 }
