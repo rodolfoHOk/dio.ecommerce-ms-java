@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${TESTCONTAINERS_POSTGRESQL_HOST}:${TESTCONTAINERS_POSTGRESQL_PORT}/checkout
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
